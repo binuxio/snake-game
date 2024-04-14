@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Bilo`s Snake Game</title>
+    <script src="main.js" type="module" defer></script>
+    <script src="snake.js" type="module" defer></script>
+</head>
+
+<body>
+    <h1>Bilo`s Snake Game</h1>
+    <div class="container">
+        <div class="snake-image">
+            <img src="icons/snake.png" width="100%" alt="">
+        </div>
+        <div class="gameScreen">
+            <div class="gameScores">
+                <div id="resumeBtn" style="text-decoration: underline;">Pause</div>
+                <div class="round">Round: <span>1</span></div>
+                <div class="highscore">Highscore: <span>0</span></div>
+                <div class="score">Score: <span>0</span></div>
+            </div>
+            <div class="screen">
+                <div id="UI">
+                    <div class="menu menuStart show">
+                        <h2>Bilo`s Snake-Game</h2>
+                        <button id="startGameBtn">Spiel starten</button>
+                    </div>
+                    <div class="menu gameOver">
+                        <h2 style="color: red;">You lost!</h2>
+                        <h3 id="scoreGameEnd" style="color: rgb(16, 78, 16);">Score: <span>0</span></h3>
+                        <button id="playAgainBtn">Play again</button>
+                    </div>
+                    <div class="menu resume">
+                        <h2>Pause</h2>
+                        <button id="resumeBtn">Resume game</button>
+                        <h6 style="font-size: clamp(.3rem, 3vw, 1rem);">Press 'P' to resume Game</h6>
+                    </div>
+                    <div class="backlay show"></div>
+                </div>
+                <div class="gameboard"></div>
+            </div>
+        </div>
+        <!-- Gameinfo -->
+        <div class="gameInfo">
+            <div class="settings">
+                <p>Game settings</p>
+                <div class="gameboardSize" style="display: grid; gap: .5rem; padding: 1rem 0;">
+                    <label class="size-label">Game Size:
+                        <span></span> <small style="color: rgba(255, 255, 255, 0.8);">(Game resets after
+                            changing)</small>
+                    </label>
+                    <input type="range" class="form-range" min="1" max="8" id="screenSizeRange">
+                </div>
+                <div class="GameSpeed" style="display: grid; gap: .5rem; padding-bottom: 1rem;">
+                    <label class="speed-label">Game Speed:
+                        <span></span>
+                    </label>
+                    <input type="range" class="form-range" min="1" max="7" id="gameSpeedRange">
+                </div>
+            </div>
+            <div class="construction">
+                <div class="block block1">
+                    <span>For moving snake press:</span>
+                    <img src="icons/keyboard-keys.png" width="150px" alt="">
+                </div>
+                <div class="block block2">
+                    <span>Pause/Resume: </span>
+                    <img src="icons/key-p.png" width="40px" alt="">
+                </div>
+            </div>
+            <div class="openSource">
+                <h4>Author:</h4>
+                <div>
+                    Bilal Hennouni
+                </div>
+                <h4>Open Source Code:</h4>
+                <div>
+                    <a href="main.js" target="_blank">main.js,</a>
+                    <a href="snake.js" target="_blank">snake.js,</a>
+                    <a href="style.css" target="_blank">style.css </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

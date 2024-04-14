@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.screen {
+    background-color: var(--screenBG, black);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+/* Menu */
+
+#UI {
+    width: 70%;
+    min-height: 8rem;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+}
+
+.menu {
+    background-color: #ddd;
+    width: 100%;
+    height: 100%;
+    border-radius: 2.5rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    align-items: center;
+    display: none;
+    
+}
+
+.menu.show {
+    display: flex;
+}
+
+.menu button {
+    padding: .7rem;
+    flex-grow: 0;
+    font-size: clamp(.1rem, 4vw, 1.5rem);
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    background-color: skyblue;
+}
+
+button:hover {
+    background-color: rgb(96, 168, 197);
+}
+
+.gameScores {
+    color: white;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    height: 2rem;
+    align-items: end;
+    font-size: 1.25rem;
+    z-index: 3;
+    padding-bottom: .3rem;
+}
+
+.gameScores #resumeBtn {
+    padding: 0 .3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.gameScores #resumeBtn:hover {
+    background-color: #666;
+}
+
+/* Gameboard */
+.gameboard {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.snakeBody {
+    background-image: url(icons/snakeBody_icon.png);
+    background-size: contain;
+    border-radius: 50%;
+    background-color: var(--screenBG);
+}
+
+.snakeHead {
+    background-image: url(icons/snakeHead.png);
+    background-size: contain;
+    z-index: 3;
+    background-color: inherit;
+
+}
+
+.food {
+    border-radius: 50%;
+    background-image: url(icons/pizza_icon.png);
+    background-size: contain;
+    background-color: var(--screenBG);
+}
+
+body {
+    background-color: #333;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 1rem;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+}
+
+.gameScreen {
+    background-color: #333;
+    flex-shrink: 0;
+    width: 85%;
+    max-width: 35rem;
+    box-shadow: 0px 0px 15px 5px #ddd;
+    margin: 2rem;
+}
+
+.backlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(221, 221, 221, .1);
+    z-index: -1;
+    display: none;
+}
+
+.backlay.show {
+    display: block;
+}
+
+.snake-image {
+    width: 30%;
+    height: 100%;
+    box-sizing: border-box;
+    flex-shrink: 1;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    z-index: -99;
+}
+
+.gameInfo {
+    background-color: #333;
+    width: 30%;
+    flex-shrink: 1;
+    color: white;
+    display: grid;
+    gap: 1rem;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.settings,
+.construction,
+.openSource {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.settings p {
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+.construction .block1 {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 1rem;
+}
+
+.construction .block2 {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.construction span {
+    color: white;
+    text-align: center;
+}
+
+.openSource {
+    display: grid;
+    gap: .5rem;
+}
+
+.openSource h4 {
+    text-decoration: underline;
+}
+
+.openSource a {
+    text-decoration: none;
+    color: white;
+    font-size: .9rem;
+    padding-left: .5rem;
+}
+
+.openSource a:hover {
+    color: skyblue;
+}
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #053a5f;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -6px;
+    background-color: skyblue;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: none;
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #053a5f;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    margin-top: -6px;
+    background-color: skyblue;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    border: none;
+}
+
+
+@media screen and (max-width: 1130px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .snake-image {
+        position: absolute;
+        top: 0rem;
+        width: 100%;
+    }
+
+    .snake-image img {
+        width: 100%;
+    }
+
+    .gameInfo {
+        width: 100%;
+    }
+}
